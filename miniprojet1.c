@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>  
 int main() {
+    int menu=0;
     char name[100];
     int Nreussite=0;
     float moyen=0;
@@ -54,11 +55,11 @@ int main() {
         }
     }
     
-    while (1==1)
+    while (menu==0)
     {
         /* code */
-    
-    printf ("choose what you wish to view");
+    menu =1;
+    printf ("choose what you wish to view\n1:le moyen de class\n2:la note la plus eleve\n4:la note la plus faible\n5:la note dun eleve\n");
     scanf("%d",&choice);
     switch(choice){
     case 1:
@@ -74,16 +75,18 @@ int main() {
     printf("%d etudiants ont reussi \n");
     break;
     case 5:
+    printf("please type the name of the student you want\n");
     scanf("%s",name);
     for(int i=0;i<N_students;i++){
-        if (name==S_names[i]){
-           
+        if (strcmp (name,S_names[i])==0){
            
         printf("%s has scored %g in the test\n",name,grade[i]);
         }
     }
     default:
-    printf("please choose one of the choices above");
+    printf("ifyou want to access the menu again type 0\n");
+    scanf("%d",&menu);
+    printf("please choose one of the choices above\n");
 }
 }
     return 0;
