@@ -2,6 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<time.h>
+
 typedef struct{
         int id,age,buts,shirt;
         char name [50];
@@ -153,3 +154,4 @@ int main()
 }
 goto start;
 }
+
